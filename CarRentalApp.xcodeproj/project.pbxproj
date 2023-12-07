@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		489DD5F92B2255EA006C1E8B /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489DD5F82B2255EA006C1E8B /* ExploreView.swift */; };
 		48CE290A2B22333C00C586EB /* CarRentalAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CE29092B22333C00C586EB /* CarRentalAppApp.swift */; };
-		48CE290C2B22333C00C586EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CE290B2B22333C00C586EB /* ContentView.swift */; };
 		48CE290E2B22333E00C586EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48CE290D2B22333E00C586EB /* Assets.xcassets */; };
 		48CE29112B22333E00C586EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48CE29102B22333E00C586EB /* Preview Assets.xcassets */; };
 		48CE291B2B22333F00C586EB /* CarRentalAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CE291A2B22333F00C586EB /* CarRentalAppTests.swift */; };
 		48CE29252B22333F00C586EB /* CarRentalAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CE29242B22333F00C586EB /* CarRentalAppUITests.swift */; };
 		48CE29272B22333F00C586EB /* CarRentalAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CE29262B22333F00C586EB /* CarRentalAppUITestsLaunchTests.swift */; };
+		48CE293E2B22369600C586EB /* MainTabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CE293D2B22369600C586EB /* MainTabbarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		489DD5F82B2255EA006C1E8B /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		48CE29062B22333C00C586EB /* CarRentalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarRentalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48CE29092B22333C00C586EB /* CarRentalAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalAppApp.swift; sourceTree = "<group>"; };
-		48CE290B2B22333C00C586EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		48CE290D2B22333E00C586EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48CE29102B22333E00C586EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		48CE29162B22333F00C586EB /* CarRentalAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarRentalAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +45,7 @@
 		48CE29202B22333F00C586EB /* CarRentalAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarRentalAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48CE29242B22333F00C586EB /* CarRentalAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalAppUITests.swift; sourceTree = "<group>"; };
 		48CE29262B22333F00C586EB /* CarRentalAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		48CE293D2B22369600C586EB /* MainTabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		489DD5F42B2254B9006C1E8B /* More */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		489DD5F52B225507006C1E8B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48CE293D2B22369600C586EB /* MainTabbarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		489DD5F62B225535006C1E8B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				48CE29092B22333C00C586EB /* CarRentalAppApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		489DD5F72B2255DB006C1E8B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				489DD5F82B2255EA006C1E8B /* ExploreView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		48CE28FD2B22333C00C586EB = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +127,10 @@
 		48CE29082B22333C00C586EB /* CarRentalApp */ = {
 			isa = PBXGroup;
 			children = (
-				48CE29092B22333C00C586EB /* CarRentalAppApp.swift */,
-				48CE290B2B22333C00C586EB /* ContentView.swift */,
+				489DD5F62B225535006C1E8B /* App */,
+				48CE29362B22343600C586EB /* Core */,
+				48CE29352B22343400C586EB /* Models */,
+				48CE29332B22342500C586EB /* Services */,
 				48CE290D2B22333E00C586EB /* Assets.xcassets */,
 				48CE290F2B22333E00C586EB /* Preview Content */,
 			);
@@ -125,6 +160,78 @@
 				48CE29262B22333F00C586EB /* CarRentalAppUITestsLaunchTests.swift */,
 			);
 			path = CarRentalAppUITests;
+			sourceTree = "<group>";
+		};
+		48CE29332B22342500C586EB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		48CE29352B22343400C586EB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		48CE29362B22343600C586EB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				48CE29392B22347500C586EB /* Authentification */,
+				48CE293A2B2235FC00C586EB /* Explore */,
+				48CE293B2B2235FF00C586EB /* Favorites */,
+				48CE29372B22347100C586EB /* Inbox */,
+				489DD5F42B2254B9006C1E8B /* More */,
+				48CE29382B22347300C586EB /* Tabbar */,
+				48CE293C2B22360100C586EB /* Trips */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		48CE29372B22347100C586EB /* Inbox */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Inbox;
+			sourceTree = "<group>";
+		};
+		48CE29382B22347300C586EB /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				489DD5F52B225507006C1E8B /* Views */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		48CE29392B22347500C586EB /* Authentification */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Authentification;
+			sourceTree = "<group>";
+		};
+		48CE293A2B2235FC00C586EB /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				489DD5F72B2255DB006C1E8B /* Views */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		48CE293B2B2235FF00C586EB /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		48CE293C2B22360100C586EB /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Trips;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +364,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48CE290C2B22333C00C586EB /* ContentView.swift in Sources */,
+				48CE293E2B22369600C586EB /* MainTabbarView.swift in Sources */,
+				489DD5F92B2255EA006C1E8B /* ExploreView.swift in Sources */,
 				48CE290A2B22333C00C586EB /* CarRentalAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
