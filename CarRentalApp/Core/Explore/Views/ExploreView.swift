@@ -12,7 +12,7 @@ struct ExploreView: View {
     private var widthSearchBar: CGFloat = UIScreen.main.bounds.width - 30
     var body: some View {
         NavigationStack {
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                     VStack {
                         Spacer()
                             .frame(height: 130)
@@ -20,6 +20,7 @@ struct ExploreView: View {
                         Spacer()
                             .frame(height: 80)
                         PopularBrandsView()
+                        TopCarsView()
                     }
             }
             .navigationStackModifier()
