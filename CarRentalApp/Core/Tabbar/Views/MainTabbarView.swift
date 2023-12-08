@@ -33,7 +33,7 @@ struct MainTabbarView: View {
                 .onAppear{
                     selectedTab = 1
                 }
-            Text("Trips")
+            TripsView()
                 .tabItem {
                     VStack {
                         Image(systemName: "road.lanes")
