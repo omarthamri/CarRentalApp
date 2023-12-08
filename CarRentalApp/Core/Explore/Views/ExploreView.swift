@@ -13,15 +13,20 @@ struct ExploreView: View {
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
+                ZStack {
+                    GradientColorBackground()
                     VStack {
                         Spacer()
-                            .frame(height: 130)
+                            .frame(height: 150)
                         CustomSearchBar()
                         Spacer()
-                            .frame(height: 80)
+                            .frame(height: 60)
                         PopularBrandsView()
                         TopCarsView()
                     }
+                }
+                    
+                    
             }
             .navigationStackModifier()
         }
@@ -30,4 +35,14 @@ struct ExploreView: View {
 
 #Preview {
     ExploreView()
+}
+
+struct GradientColorBackground: View {
+    var body: some View {
+        VStack {
+            LinearGradient(colors: [Color(.systemGray),.blue], startPoint: .top, endPoint: .center)
+                .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height / 2)
+            Spacer()
+        }
+    }
 }

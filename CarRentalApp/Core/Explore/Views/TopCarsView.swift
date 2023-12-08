@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct TopCarsView: View {
+    @State private var isFavorite: [Bool] = [false,false,false,false,false]
     var body: some View {
         VStack(alignment: .leading,spacing: 15) {
             Text("Top Cars 🔥")
                 .font(.headline)
                 .fontWeight(.semibold)
-            ForEach (0..<5) { _ in
+            ForEach (0..<5) { index in
                 RoundedRectangle(cornerRadius: 10)
                     .fill(.white)
                     .frame(height: 120)
@@ -39,8 +40,10 @@ struct TopCarsView: View {
                                     .foregroundStyle(.gray)
                             }
                             Spacer()
-                            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                                Image(systemName: "heart")
+                            Button(action: {
+                                isFavorite[index].toggle()
+                            }, label: {
+                                Image(systemName: isFavorite[index] ? "heart.fill" : "heart")
                                     .foregroundStyle(.red)
                             })
                             
