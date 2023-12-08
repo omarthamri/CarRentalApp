@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct CustomSearchBar: View {
-    var widthSearchBar: CGFloat
     var body: some View {
         Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
             HStack {
@@ -22,7 +21,7 @@ struct CustomSearchBar: View {
                 
                 
             }
-            .frame(width: widthSearchBar, height: 50)
+            .frame(height: 60)
             .overlay {
                 Capsule()
                     .stroke(lineWidth: 0.5)
@@ -36,5 +35,5 @@ struct CustomSearchBar: View {
 }
 
 #Preview {
-    CustomSearchBar(widthSearchBar: 130)
+    CustomSearchBar()
 }

@@ -11,7 +11,16 @@ struct NavigationStackModifier: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .background(Color(.systemGray6))
+            .background{
+                ZStack {
+                    Color(.systemGray6)
+                    VStack {
+                        LinearGradient(colors: [Color(.systemGray),.blue], startPoint: .top, endPoint: .center)
+                            .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height / 2)
+                        Spacer()
+                    }
+                }
+            }
             .ignoresSafeArea()
             .navigationTitle("Find Cars")
             .navigationBarTitleDisplayMode(.inline)
