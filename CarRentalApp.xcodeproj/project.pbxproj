@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4849206F2B2351A8000BE581 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4849206E2B2351A8000BE581 /* CustomSearchBar.swift */; };
 		489DD5F92B2255EA006C1E8B /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489DD5F82B2255EA006C1E8B /* ExploreView.swift */; };
 		48CE290A2B22333C00C586EB /* CarRentalAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CE29092B22333C00C586EB /* CarRentalAppApp.swift */; };
 		48CE290E2B22333E00C586EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48CE290D2B22333E00C586EB /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 		48CE29252B22333F00C586EB /* CarRentalAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CE29242B22333F00C586EB /* CarRentalAppUITests.swift */; };
 		48CE29272B22333F00C586EB /* CarRentalAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CE29262B22333F00C586EB /* CarRentalAppUITestsLaunchTests.swift */; };
 		48CE293E2B22369600C586EB /* MainTabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CE293D2B22369600C586EB /* MainTabbarView.swift */; };
+		48E36AA42B2285C2004CB641 /* NavigationStackModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36AA32B2285C2004CB641 /* NavigationStackModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4849206E2B2351A8000BE581 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		489DD5F82B2255EA006C1E8B /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		48CE29062B22333C00C586EB /* CarRentalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarRentalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48CE29092B22333C00C586EB /* CarRentalAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalAppApp.swift; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 		48CE29242B22333F00C586EB /* CarRentalAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalAppUITests.swift; sourceTree = "<group>"; };
 		48CE29262B22333F00C586EB /* CarRentalAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		48CE293D2B22369600C586EB /* MainTabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarView.swift; sourceTree = "<group>"; };
+		48E36AA32B2285C2004CB641 /* NavigationStackModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				489DD5F82B2255EA006C1E8B /* ExploreView.swift */,
+				4849206E2B2351A8000BE581 /* CustomSearchBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 		48CE29362B22343600C586EB /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				48E36AA22B228599004CB641 /* Components */,
 				48CE29392B22347500C586EB /* Authentification */,
 				48CE293A2B2235FC00C586EB /* Explore */,
 				48CE293B2B2235FF00C586EB /* Favorites */,
@@ -232,6 +238,22 @@
 			children = (
 			);
 			path = Trips;
+			sourceTree = "<group>";
+		};
+		48E36AA22B228599004CB641 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				48E36AA52B228717004CB641 /* ViewModifiers */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		48E36AA52B228717004CB641 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				48E36AA32B2285C2004CB641 /* NavigationStackModifier.swift */,
+			);
+			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,6 +387,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				48CE293E2B22369600C586EB /* MainTabbarView.swift in Sources */,
+				4849206F2B2351A8000BE581 /* CustomSearchBar.swift in Sources */,
+				48E36AA42B2285C2004CB641 /* NavigationStackModifier.swift in Sources */,
 				489DD5F92B2255EA006C1E8B /* ExploreView.swift in Sources */,
 				48CE290A2B22333C00C586EB /* CarRentalAppApp.swift in Sources */,
 			);

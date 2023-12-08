@@ -8,16 +8,24 @@
 import SwiftUI
 
 struct ExploreView: View {
+    @State private var searchText: String = ""
+    private var widthSearchBar: CGFloat = UIScreen.main.bounds.width - 30
     var body: some View {
-        ScrollView {
-            VStack {
-                LinearGradient(colors: [Color(.systemGray),.blue], startPoint: .top, endPoint: .center)
-                    .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height / 2)
+        NavigationStack {
+            ScrollView {
+                ZStack {
+                    LinearGradient(colors: [Color(.systemGray),.blue], startPoint: .top, endPoint: .center)
+                        .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height / 2)
+                    VStack {
+                        Spacer()
+                            .frame(height: 130)
+                        CustomSearchBar(widthSearchBar: widthSearchBar)
+                        Spacer()
+                    }
+                }
             }
+            .navigationStackModifier()
         }
-        .background(Color(.systemGray6))
-        .ignoresSafeArea()
-        
     }
 }
 
