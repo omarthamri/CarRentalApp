@@ -22,7 +22,7 @@ struct MainTabbarView: View {
                 .onAppear{
                     selectedTab = 0
                 }
-            Text("Favorites")
+            FavoritesView()
                 .tabItem {
                     VStack {
                         Image(systemName: "heart")

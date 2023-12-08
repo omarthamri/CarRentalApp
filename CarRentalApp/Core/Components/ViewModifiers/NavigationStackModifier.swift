@@ -17,9 +17,6 @@ struct NavigationStackModifier: ViewModifier {
             .ignoresSafeArea()
             .navigationTitle("Find Cars")
             .navigationBarTitleDisplayMode(.inline)
-            .onAppear{
-                UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
-            }
             .toolbar{
                 ToolbarItem(placement: .topBarLeading) {
                     Circle()
