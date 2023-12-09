@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailCarView: View {
-    var selectedCar: Car = Car(id: UUID().uuidString, carName: "MERCEDES-BENZ C-CLASS", rating: 5, brand: "Mercedes", pricePerDay: 40, description: "This 2023 mercedes benz c class is the perfect car to get around town or book for a weekend gateaway!", imagesNames: ["mercedes_c_0","mercedes_c_1","mercedes_c_2","mercedes_c_3","mercedes_c_4"])
+    var selectedCar: Car = Car(id: UUID().uuidString, carName: "MERCEDES-BENZ C-CLASS", rating: 5, brand: "Mercedes", pricePerDay: 40, description: "This 2023 mercedes benz c class is the perfect car to get around town or book for a weekend gateaway!", imagesNames: ["mercedes_c_0","mercedes_c_1","mercedes_c_2","mercedes_c_3","mercedes_c_4"], insurance: "Travelers")
     let heightTabView: CGFloat = UIScreen.main.bounds.height / 3
     var body: some View {
         
@@ -32,6 +32,9 @@ struct DetailCarView: View {
                         Image(systemName: "star.fill")
                             .foregroundStyle(.orange)
                     }
+                    CarInfoView(title: "Distance included", message: selectedCar.maxDistance == nil ? "unlimited" : "\(selectedCar.maxDistance ?? 0) km")
+                    InsuranceInfoView(title: "Insurance & Protection", message: selectedCar.insurance)
+                    CarInfoView(title: "Description", message: selectedCar.description)
                 }
                 .padding(.horizontal)
                 
@@ -77,4 +80,40 @@ struct DetailCarView: View {
 
 #Preview {
     DetailCarView()
+}
+
+struct CarInfoView: View {
+    var title: String
+    var message: String
+    var body: some View {
+        VStack(alignment: .leading,spacing: 15) {
+            Text(title)
+                .foregroundStyle(Color(.darkGray))
+                .font(.headline)
+                .fontWeight(.semibold)
+            Text(message)
+        }
+    }
+}
+
+struct InsuranceInfoView: View {
+    var title: String
+    var message: String
+    var body: some View {
+        VStack(alignment: .leading,spacing: 15) {
+            Text(title)
+                .foregroundStyle(Color(.darkGray))
+                .font(.headline)
+                .fontWeight(.semibold)
+            HStack {
+                Text("Insurance via "+message)
+                Spacer()
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Text("Read more")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                })
+            }
+        }
+    }
 }

@@ -17,4 +17,6 @@ struct Car: Identifiable,Codable,Hashable {
     var pricePerDay: Int
     var description: String
     var imagesNames: [String]
+    var insurance: String
+    var maxDistance: Float?
 }
