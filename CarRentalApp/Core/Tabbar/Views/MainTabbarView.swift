@@ -44,7 +44,7 @@ struct MainTabbarView: View {
                 .onAppear{
                     selectedTab = 2
                 }
-            Text("Inbox")
+            InboxView()
                 .tabItem {
                     VStack {
                         Image(systemName: "bubble")

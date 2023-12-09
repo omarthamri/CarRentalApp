@@ -10,6 +10,7 @@
 		48267AC72B23B494009D0DB6 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48267AC62B23B493009D0DB6 /* FavoritesView.swift */; };
 		48267ACA2B23CDE0009D0DB6 /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48267AC92B23CDE0009D0DB6 /* TripsView.swift */; };
 		48267ACC2B23E0EC009D0DB6 /* EmptyElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48267ACB2B23E0EC009D0DB6 /* EmptyElementView.swift */; };
+		48267ACF2B23E664009D0DB6 /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48267ACE2B23E664009D0DB6 /* InboxView.swift */; };
 		4849206F2B2351A8000BE581 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4849206E2B2351A8000BE581 /* CustomSearchBar.swift */; };
 		484920712B235BFA000BE581 /* PopularBrandsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484920702B235BFA000BE581 /* PopularBrandsView.swift */; };
 		484920732B237AEB000BE581 /* TopCarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484920722B237AEB000BE581 /* TopCarsView.swift */; };
@@ -46,6 +47,7 @@
 		48267AC62B23B493009D0DB6 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		48267AC92B23CDE0009D0DB6 /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
 		48267ACB2B23E0EC009D0DB6 /* EmptyElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyElementView.swift; sourceTree = "<group>"; };
+		48267ACE2B23E664009D0DB6 /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
 		4849206E2B2351A8000BE581 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		484920702B235BFA000BE581 /* PopularBrandsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularBrandsView.swift; sourceTree = "<group>"; };
 		484920722B237AEB000BE581 /* TopCarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCarsView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 			isa = PBXGroup;
 			children = (
 				48267AC92B23CDE0009D0DB6 /* TripsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		48267ACD2B23E658009D0DB6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48267ACE2B23E664009D0DB6 /* InboxView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -238,6 +248,7 @@
 		48CE29372B22347100C586EB /* Inbox */ = {
 			isa = PBXGroup;
 			children = (
+				48267ACD2B23E658009D0DB6 /* Views */,
 			);
 			path = Inbox;
 			sourceTree = "<group>";
@@ -429,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				484920712B235BFA000BE581 /* PopularBrandsView.swift in Sources */,
+				48267ACF2B23E664009D0DB6 /* InboxView.swift in Sources */,
 				48CE293E2B22369600C586EB /* MainTabbarView.swift in Sources */,
 				484920762B239207000BE581 /* CustomCarView.swift in Sources */,
 				4849206F2B2351A8000BE581 /* CustomSearchBar.swift in Sources */,
