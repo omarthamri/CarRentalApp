@@ -60,7 +60,7 @@ struct InboxView: View {
                     case .Messages:
                         EmptyElementView(imageName: "message", title: "No messages yet")
                     case .Notifications:
-                        EmptyElementView(imageName: "message", title: "No messages yet")
+                        NotificationsView()
                     }
                     
                     Spacer()

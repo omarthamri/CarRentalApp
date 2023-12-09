@@ -55,7 +55,7 @@ struct MainTabbarView: View {
                 .onAppear{
                     selectedTab = 3
                 }
-            Text("More")
+            MoreView()
                 .tabItem {
                     VStack {
                         Image(systemName: "ellipsis")

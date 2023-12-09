@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48165C792B24A58000F34F0A /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48165C782B24A58000F34F0A /* MoreView.swift */; };
+		48165C7B2B24A89700F34F0A /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48165C7A2B24A89700F34F0A /* NotificationsView.swift */; };
 		48267AC72B23B494009D0DB6 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48267AC62B23B493009D0DB6 /* FavoritesView.swift */; };
 		48267ACA2B23CDE0009D0DB6 /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48267AC92B23CDE0009D0DB6 /* TripsView.swift */; };
 		48267ACC2B23E0EC009D0DB6 /* EmptyElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48267ACB2B23E0EC009D0DB6 /* EmptyElementView.swift */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		48165C782B24A58000F34F0A /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
+		48165C7A2B24A89700F34F0A /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		48267AC62B23B493009D0DB6 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		48267AC92B23CDE0009D0DB6 /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
 		48267ACB2B23E0EC009D0DB6 /* EmptyElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyElementView.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				48267ACE2B23E664009D0DB6 /* InboxView.swift */,
+				48165C7A2B24A89700F34F0A /* NotificationsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 		489DD5F42B2254B9006C1E8B /* More */ = {
 			isa = PBXGroup;
 			children = (
+				48165C782B24A58000F34F0A /* MoreView.swift */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -442,6 +448,7 @@
 				484920712B235BFA000BE581 /* PopularBrandsView.swift in Sources */,
 				48267ACF2B23E664009D0DB6 /* InboxView.swift in Sources */,
 				48CE293E2B22369600C586EB /* MainTabbarView.swift in Sources */,
+				48165C792B24A58000F34F0A /* MoreView.swift in Sources */,
 				484920762B239207000BE581 /* CustomCarView.swift in Sources */,
 				4849206F2B2351A8000BE581 /* CustomSearchBar.swift in Sources */,
 				48E36AA42B2285C2004CB641 /* NavigationStackModifier.swift in Sources */,
@@ -451,6 +458,7 @@
 				48CE290A2B22333C00C586EB /* CarRentalAppApp.swift in Sources */,
 				484920732B237AEB000BE581 /* TopCarsView.swift in Sources */,
 				48267AC72B23B494009D0DB6 /* FavoritesView.swift in Sources */,
+				48165C7B2B24A89700F34F0A /* NotificationsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
