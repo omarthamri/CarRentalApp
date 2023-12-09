@@ -24,12 +24,14 @@ struct CustomCarView: View {
                         Text("MERCEDES-BENZ C-CLASS")
                             .font(.footnote)
                             .fontWeight(.semibold)
+                            .foregroundStyle(.black)
                         HStack {
                             Image(systemName: "star.fill")
                                 .foregroundStyle(.orange)
                             Text("5.0")
                                 .font(.footnote)
                                 .fontWeight(.semibold)
+                                .foregroundStyle(.black)
                         }
                         Text("By Dwight automotive")
                             .font(.footnote)

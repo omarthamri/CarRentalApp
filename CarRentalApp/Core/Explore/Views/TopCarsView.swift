@@ -15,7 +15,13 @@ struct TopCarsView: View {
                 .font(.headline)
                 .fontWeight(.semibold)
             ForEach (0..<5) { index in
-                CustomCarView(index: index, isFavorite: isFavorite[index])
+                NavigationLink {
+                    DetailCarView()
+                } label: {
+                    CustomCarView(index: index, isFavorite: isFavorite[index])
+                }
+
+                
             }
             
         }
