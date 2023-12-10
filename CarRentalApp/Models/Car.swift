@@ -19,4 +19,7 @@ struct Car: Identifiable,Codable,Hashable {
     var imagesNames: [String]
     var insurance: String
     var maxDistance: Float?
+    var numberOfSeats: Int
+    var numberOfDoors: Int
+    var GasType: String
 }

@@ -17,6 +17,7 @@ struct TopCarsView: View {
             ForEach (0..<5) { index in
                 NavigationLink {
                     DetailCarView()
+                        .navigationBarBackButtonHidden()
                 } label: {
                     CustomCarView(index: index, isFavorite: isFavorite[index])
                 }

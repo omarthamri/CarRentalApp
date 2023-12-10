@@ -13,7 +13,13 @@ struct FavoritesView: View {
             ScrollView {
                 VStack {
                     ForEach(0..<5) { index in
-                        CustomCarView(index: index, isFavorite: true)
+                        NavigationLink {
+                            DetailCarView()
+                                .navigationBarBackButtonHidden()
+                        } label: {
+                            CustomCarView(index: index, isFavorite: true)
+                        }
+                        
                         
                     }
                 }
