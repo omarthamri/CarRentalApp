@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ExploreView: View {
     @State private var searchText: String = ""
+    @StateObject var viewModel = ExploreViewModel()
     private var widthSearchBar: CGFloat = UIScreen.main.bounds.width - 30
     var body: some View {
         NavigationStack {
@@ -21,7 +22,7 @@ struct ExploreView: View {
                         CustomSearchBar()
                         Spacer()
                             .frame(height: 60)
-                        PopularBrandsView()
+                        PopularBrandsView(viewModel: viewModel)
                         TopCarsView()
                     }
                 }

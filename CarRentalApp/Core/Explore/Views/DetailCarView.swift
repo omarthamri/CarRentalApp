@@ -181,6 +181,7 @@ struct CancellationView: View {
 struct InsuranceInfoView: View {
     var title: String
     var message: String
+    @State private var showInsuranceSheet: Bool = false
     var body: some View {
         VStack(alignment: .leading,spacing: 15) {
             Text(title)
@@ -191,7 +192,7 @@ struct InsuranceInfoView: View {
                 Text("Insurance via "+message)
                 Spacer()
                 Button(action: {
-                    
+                    showInsuranceSheet.toggle()
                 }, label: {
                     Text("Read more")
                         .font(.headline)
@@ -200,6 +201,9 @@ struct InsuranceInfoView: View {
             }
         }
         .padding(.horizontal)
+        .sheet(isPresented: $showInsuranceSheet) {
+           MyInsuranceView()
+        }
     }
 }
 

@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct PopularBrandsView: View {
+    @StateObject var viewModel: ExploreViewModel
+    
+    init(viewModel: ExploreViewModel) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+    }
     var body: some View {
         VStack {
             HStack {
@@ -26,17 +31,17 @@ struct PopularBrandsView: View {
             .padding()
             ScrollView(.horizontal,showsIndicators: false) {
                 HStack(spacing: 16) {
-                    ForEach(0..<5) { _ in
+                    ForEach(viewModel.brands) { brand in
                         RoundedRectangle(cornerRadius: 10)
                             .fill(.white)
                             .frame(width: 150, height: 200)
                             .overlay {
                                 VStack {
-                                    Image("mercedes")
+                                    Image(brand.imageName)
                                         .resizable()
                                         .scaledToFill()
                                         .frame(width: 50, height: 50)
-                                    Text("Mercedes")
+                                    Text(brand.brandName)
                                     Text("+5")
                                         .font(.footnote)
                                         .foregroundStyle(Color(.systemBlue))
@@ -53,5 +58,5 @@ struct PopularBrandsView: View {
 }
 
 #Preview {
-    PopularBrandsView()
+    PopularBrandsView(viewModel: ExploreViewModel())
 }

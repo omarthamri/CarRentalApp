@@ -28,6 +28,9 @@
 		48CE29272B22333F00C586EB /* CarRentalAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CE29262B22333F00C586EB /* CarRentalAppUITestsLaunchTests.swift */; };
 		48CE293E2B22369600C586EB /* MainTabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CE293D2B22369600C586EB /* MainTabbarView.swift */; };
 		48E36AA42B2285C2004CB641 /* NavigationStackModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36AA32B2285C2004CB641 /* NavigationStackModifier.swift */; };
+		48F22FE12B264B270085C6DD /* MyInsuranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F22FE02B264B270085C6DD /* MyInsuranceView.swift */; };
+		48F22FE32B2650730085C6DD /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F22FE22B2650730085C6DD /* Brand.swift */; };
+		48F22FE62B26515A0085C6DD /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F22FE52B26515A0085C6DD /* ExploreViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,10 @@
 		48CE29262B22333F00C586EB /* CarRentalAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		48CE293D2B22369600C586EB /* MainTabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarView.swift; sourceTree = "<group>"; };
 		48E36AA32B2285C2004CB641 /* NavigationStackModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackModifier.swift; sourceTree = "<group>"; };
+		48F22FE02B264B270085C6DD /* MyInsuranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInsuranceView.swift; sourceTree = "<group>"; };
+		48F22FE22B2650730085C6DD /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
+		48F22FE52B26515A0085C6DD /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		48F22FEA2B2661270085C6DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +172,7 @@
 				484920702B235BFA000BE581 /* PopularBrandsView.swift */,
 				484920722B237AEB000BE581 /* TopCarsView.swift */,
 				48165C802B24D1A800F34F0A /* DetailCarView.swift */,
+				48F22FE02B264B270085C6DD /* MyInsuranceView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +200,7 @@
 		48CE29082B22333C00C586EB /* CarRentalApp */ = {
 			isa = PBXGroup;
 			children = (
+				48F22FEA2B2661270085C6DD /* Info.plist */,
 				489DD5F62B225535006C1E8B /* App */,
 				48CE29362B22343600C586EB /* Core */,
 				48CE29352B22343400C586EB /* Models */,
@@ -238,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				48165C7C2B24CD1000F34F0A /* Car.swift */,
+				48F22FE22B2650730085C6DD /* Brand.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -276,6 +286,7 @@
 		48CE29392B22347500C586EB /* Authentification */ = {
 			isa = PBXGroup;
 			children = (
+				48F22FE72B265F490085C6DD /* Views */,
 			);
 			path = Authentification;
 			sourceTree = "<group>";
@@ -283,6 +294,7 @@
 		48CE293A2B2235FC00C586EB /* Explore */ = {
 			isa = PBXGroup;
 			children = (
+				48F22FE42B2651390085C6DD /* Viewmodels */,
 				489DD5F72B2255DB006C1E8B /* Views */,
 			);
 			path = Explore;
@@ -319,6 +331,21 @@
 				48E36AA32B2285C2004CB641 /* NavigationStackModifier.swift */,
 			);
 			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		48F22FE42B2651390085C6DD /* Viewmodels */ = {
+			isa = PBXGroup;
+			children = (
+				48F22FE52B26515A0085C6DD /* ExploreViewModel.swift */,
+			);
+			path = Viewmodels;
+			sourceTree = "<group>";
+		};
+		48F22FE72B265F490085C6DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				484920712B235BFA000BE581 /* PopularBrandsView.swift in Sources */,
+				48F22FE32B2650730085C6DD /* Brand.swift in Sources */,
 				48267ACF2B23E664009D0DB6 /* InboxView.swift in Sources */,
 				48165C812B24D1A800F34F0A /* DetailCarView.swift in Sources */,
 				48165C7D2B24CD1000F34F0A /* Car.swift in Sources */,
@@ -460,12 +488,14 @@
 				484920762B239207000BE581 /* CustomCarView.swift in Sources */,
 				4849206F2B2351A8000BE581 /* CustomSearchBar.swift in Sources */,
 				48E36AA42B2285C2004CB641 /* NavigationStackModifier.swift in Sources */,
+				48F22FE12B264B270085C6DD /* MyInsuranceView.swift in Sources */,
 				48267ACC2B23E0EC009D0DB6 /* EmptyElementView.swift in Sources */,
 				48267ACA2B23CDE0009D0DB6 /* TripsView.swift in Sources */,
 				489DD5F92B2255EA006C1E8B /* ExploreView.swift in Sources */,
 				48CE290A2B22333C00C586EB /* CarRentalAppApp.swift in Sources */,
 				484920732B237AEB000BE581 /* TopCarsView.swift in Sources */,
 				48267AC72B23B494009D0DB6 /* FavoritesView.swift in Sources */,
+				48F22FE62B26515A0085C6DD /* ExploreViewModel.swift in Sources */,
 				48165C7B2B24A89700F34F0A /* NotificationsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,9 +662,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CarRentalApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CarRentalApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -660,9 +690,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CarRentalApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CarRentalApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
