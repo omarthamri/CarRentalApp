@@ -22,4 +22,7 @@ struct Car: Identifiable,Codable,Hashable {
     var numberOfSeats: Int
     var numberOfDoors: Int
     var GasType: String
+    var hostName: String
+    var hostImageName: String
+    var hostJoinDate: String
 }
