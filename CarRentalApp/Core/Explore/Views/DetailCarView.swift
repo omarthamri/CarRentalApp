@@ -237,6 +237,14 @@ struct TripDateView: View {
                         Slider(value: $start, in: 0...24)
                     }
                     .padding(.horizontal)
+                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                        Text("Save")
+                            .foregroundStyle(.white)
+                            .frame(width: UIScreen.main.bounds.width - 35, height: 45)
+                            .background(.blue)
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                    })
+                    .padding(.top)
                     Spacer()
                 }
                 .padding(.vertical)
