@@ -10,11 +10,17 @@ import SwiftUI
 struct MoreView: View {
     var parametersOptions: [(String,Image)] = [("Account",Image(systemName: "person")),("How CarRentalApp works",Image(systemName: "key.horizontal")),("Contact Support",Image(systemName: "person.wave.2")),("Legal",Image(systemName: "newspaper")),("Open source license",Image(systemName: "newspaper"))]
     @State private var showAlert: Bool = false
+    @State private var displayEditProfileView: Bool = false
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading,spacing: 30) {
-                    HeaderView()
+                    Button(action: {
+                        displayEditProfileView.toggle()
+                    }, label: {
+                        HeaderView()
+                    })
+                    
                         VStack(spacing: 60) {
                             
                                 ForEach(parametersOptions, id: \.0) { option in
@@ -51,6 +57,9 @@ struct MoreView: View {
             })
             .ignoresSafeArea()
             .background(Color(.systemGray6))
+            .fullScreenCover(isPresented: $displayEditProfileView, content: {
+                EditProfileView()
+            })
         }
         }
     }
@@ -72,6 +81,7 @@ struct HeaderView: View {
                     Text("Wanda Maximov")
                         .font(.headline)
                         .fontWeight(.semibold)
+                        .foregroundStyle(.black)
                     Text("View and edit profile")
                         .foregroundStyle(.blue)
                 }
