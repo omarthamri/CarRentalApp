@@ -9,8 +9,11 @@ import SwiftUI
 
 struct ExploreView: View {
     @State private var searchText: String = ""
-    @StateObject var viewModel = ExploreViewModel()
     private var widthSearchBar: CGFloat = UIScreen.main.bounds.width - 30
+    @StateObject var viewModel: ExploreViewModel
+    init(viewModel: ExploreViewModel) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+    }
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
@@ -23,7 +26,9 @@ struct ExploreView: View {
                         Spacer()
                             .frame(height: 60)
                         PopularBrandsView(viewModel: viewModel)
-                        TopCarsView()
+                        TopCarsView(viewModel: viewModel)
+                        Spacer()
+                            .frame(height: 50)
                     }
                 }
                     
@@ -35,7 +40,7 @@ struct ExploreView: View {
 }
 
 #Preview {
-    ExploreView()
+    ExploreView(viewModel: ExploreViewModel())
 }
 
 struct GradientColorBackground: View {

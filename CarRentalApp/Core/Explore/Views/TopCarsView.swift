@@ -8,18 +8,23 @@
 import SwiftUI
 
 struct TopCarsView: View {
-    @State private var isFavorite: [Bool] = [false,false,false,false,false]
+    @StateObject var viewModel: ExploreViewModel
+    
+    init(viewModel: ExploreViewModel) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+    }
     var body: some View {
         VStack(alignment: .leading,spacing: 15) {
             Text("Top Cars 🔥")
                 .font(.headline)
                 .fontWeight(.semibold)
-            ForEach (0..<5) { index in
+            ForEach (viewModel.cars) { car in
+                let index = viewModel.cars.firstIndex(where: {$0 == car}) ?? 0
                 NavigationLink {
-                    DetailCarView()
+                    DetailCarView(viewModel: viewModel, index: index)
                         .navigationBarBackButtonHidden()
                 } label: {
-                    CustomCarView(index: index, isFavorite: isFavorite[index])
+                    CustomCarView(index: index, viewModel: viewModel)
                 }
 
                 
@@ -28,8 +33,4 @@ struct TopCarsView: View {
         }
         .padding()
     }
-}
-
-#Preview {
-    TopCarsView()
 }

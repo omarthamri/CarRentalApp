@@ -9,31 +9,37 @@ import SwiftUI
 
 struct CustomCarView: View {
     var index: Int
-    @State var isFavorite: Bool
+    @StateObject var viewModel: ExploreViewModel
+    @State private var isFavorite: Bool
+    init(index: Int, viewModel: ExploreViewModel) {
+        self.index = index
+        self._viewModel = StateObject(wrappedValue: viewModel)
+        self.isFavorite = viewModel.cars[index].isFavorite
+    }
     var body: some View {
         RoundedRectangle(cornerRadius: 10)
             .fill(.white)
             .frame(height: 120)
             .overlay {
                 HStack(spacing: 10) {
-                    Image("merecedesC")
+                    Image(viewModel.cars[index].mainImageName)
                         .resizable()
                         .frame(width: 80,height: 50)
                         .scaledToFit()
                     VStack(alignment: .leading, spacing: 12) {
-                        Text("MERCEDES-BENZ C-CLASS")
+                        Text(viewModel.cars[index].carName)
                             .font(.footnote)
                             .fontWeight(.semibold)
                             .foregroundStyle(.black)
                         HStack {
                             Image(systemName: "star.fill")
                                 .foregroundStyle(.orange)
-                            Text("5.0")
+                            Text(String(format: "%.1f", viewModel.cars[index].rating))
                                 .font(.footnote)
                                 .fontWeight(.semibold)
                                 .foregroundStyle(.black)
                         }
-                        Text("By Dwight automotive")
+                        Text("By \(viewModel.cars[index].hostName)")
                             .font(.footnote)
                             .foregroundStyle(.gray)
                     }
@@ -52,5 +58,5 @@ struct CustomCarView: View {
 }
 
 #Preview {
-    CustomCarView(index: 0, isFavorite: false)
+    CustomCarView(index: 0, viewModel: ExploreViewModel())
 }

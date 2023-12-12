@@ -8,71 +8,89 @@
 import SwiftUI
 
 struct DetailCarView: View {
-    var selectedCar: Car = Car(id: UUID().uuidString, carName: "MERCEDES-BENZ C-CLASS", rating: 5, brand: "Mercedes", pricePerDay: 40, description: "This 2023 mercedes benz c class is the perfect car to get around town or book for a weekend gateaway!", imagesNames: ["mercedes_c_0","mercedes_c_1","mercedes_c_2","mercedes_c_3","mercedes_c_4"], insurance: "Travelers",numberOfSeats: 5,numberOfDoors: 4,GasType: "Gas (Premium)",hostName: "Dwight Automotive",hostImageName: "dwight",hostJoinDate: "Dec 2018")
+    let index: Int
+    @StateObject private var viewModel: ExploreViewModel
     let heightTabView: CGFloat = UIScreen.main.bounds.height / 3
     @Environment(\.dismiss) var dismiss
+    @State private var isFavorite: Bool
+    
+    init(viewModel: ExploreViewModel,index: Int) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+        self.index = index
+        self._isFavorite = State(initialValue: viewModel.cars[index].isFavorite)
+    }
     var body: some View {
         
         ScrollView {
             VStack(alignment: .leading,spacing: 15) {
                 TabView {
-                    ForEach(selectedCar.imagesNames,id: \.self) { imageName in
+                    ForEach(viewModel.cars[index].imagesNames,id: \.self) { imageName in
                         Image(imageName)
                             .resizable()
                             .scaledToFill()
                     }
                 }
                 .overlay {
-                    Button {
-                        dismiss()
-                    } label: {
-                        VStack(alignment: .leading) {
-                            HStack {
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Button(action: { dismiss() }, label: {
                                 Image(systemName: "chevron.left")
                                     .foregroundStyle(.white)
                                     .font(.largeTitle)
                                     .fontWeight(.bold)
                                     .frame(width: 40, height: 40)
                                     .shadow(radius: 10, x:10,y:10)
-                                Spacer()
-                            }
+                            })
                             Spacer()
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(.white)
+                                .frame(width: 40, height: 40)
+                                .overlay {
+                                    Button {
+                                        isFavorite.toggle()
+                                    } label: {
+                                        Image(systemName: isFavorite ? "heart.fill" : "heart")
+                                            .foregroundStyle(.red)
+                                    }
+                                    
+                                }
                         }
-                        .padding(.horizontal,10)
-                        .padding(.vertical,40)
-                        
+                        Spacer()
                     }
+                    .padding(.horizontal,10)
+                    .padding(.vertical,40)
 
                 }
                 .tabViewStyle(.page)
                 .frame(height: heightTabView)
                 VStack(alignment: .leading,spacing: 15) {
-                    Text(selectedCar.carName)
+                    Text(viewModel.cars[index].carName)
                         .font(.headline)
                         .fontWeight(.bold)
                     HStack(spacing: 2) {
-                        Text("\(selectedCar.rating)")
+                        Text(String(format: "%.1f", viewModel.cars[index].rating))
+                        
                         Image(systemName: "star.fill")
                             .foregroundStyle(.orange)
                     }
                 }
                 .padding(.horizontal)
                 Divider()
-                TripDateView(title: "Trip Dates", pickupDate: "Monday 11 Dec, 10:00",returnDate: "Wednesday 13 Dec, 10:00")
+                TripDateView(title: "Trip Dates", pickupDate: "Tuesday 12 Dec, 10:00",returnDate: "Thursday 14 Dec, 10:00")
                 Divider()
                 LocationView(title: "Pickup & Return", message: "San Francisco")
                 Divider()
                 CancellationView(title: "Cancellation policy", message: "Free cancellation")
                 Divider()
-                CarInfoView(title: "Distance included", message: selectedCar.maxDistance == nil ? "Unlimited" : "\(selectedCar.maxDistance ?? 0) km")
+                CarInfoView(title: "Distance included", message: viewModel.cars[index].maxDistance == nil ? "Unlimited" : "\(viewModel.cars[index].maxDistance ?? 0) km")
                 Divider()
-                InsuranceInfoView(title: "Insurance & Protection", message: selectedCar.insurance)
+                InsuranceInfoView(title: "Insurance & Protection", message: viewModel.cars[index].insurance)
                 Divider()
-                CarBasicsView(title: "Car Basics", numberOfSeats: selectedCar.numberOfSeats, numberOfDoors: selectedCar.numberOfDoors, gasType: selectedCar.GasType)
+                CarBasicsView(title: "Car Basics", numberOfSeats: viewModel.cars[index].numberOfSeats, numberOfDoors: viewModel.cars[index].numberOfDoors, gasType: viewModel.cars[index].GasType)
                 Divider()
-                CarInfoView(title: "Description", message: selectedCar.description)
+                CarInfoView(title: "Description", message: viewModel.cars[index].description)
                 Divider()
-                HostView(title: "Hosted by", message:  selectedCar.hostName, imageName: selectedCar.hostImageName, joinDate: selectedCar.hostJoinDate)
+                HostView(title: "Hosted by", message:  viewModel.cars[index].hostName, imageName: viewModel.cars[index].hostImageName, joinDate:viewModel.cars[index].hostJoinDate)
                 Spacer()
                     .frame(height: 120)
                 
@@ -90,10 +108,10 @@ struct DetailCarView: View {
                         .frame(width: UIScreen.main.bounds.width, height: 120)
                     HStack {
                         VStack {
-                            Text("\(selectedCar.pricePerDay)$ per day")
+                            Text("\(viewModel.cars[index].pricePerDay)$ per day")
                                 .font(.headline)
                                 .fontWeight(.semibold)
-                            Text("\(selectedCar.pricePerDay * 3)$ est. total")
+                            Text("\(viewModel.cars[index].pricePerDay * 3)$ est. total")
                                 .font(.subheadline)
                                 .underline()
                         }
@@ -117,7 +135,7 @@ struct DetailCarView: View {
 }
 
 #Preview {
-    DetailCarView()
+    DetailCarView(viewModel: ExploreViewModel(), index: 0)
 }
 
 struct CarInfoView: View {
@@ -160,7 +178,7 @@ struct TripDateView: View {
     var title: String
     var pickupDate: String
     var returnDate: String
-    @State private var selectedDates: Set<DateComponents> = [.init(timeZone: .gmt, year: 2023, month: 12, day: 11, hour: 10),.init(timeZone: .gmt, year: 2023, month: 12, day: 13, hour: 10)]
+    @State private var selectedDates: Set<DateComponents> = [.init(timeZone: .gmt, year: 2023, month: 12, day: 12, hour: 10),.init(timeZone: .gmt, year: 2023, month: 12, day: 14, hour: 10)]
     @State private var isDatePickerPresented: Bool = false
     var body: some View {
         VStack(alignment: .leading,spacing: 15) {

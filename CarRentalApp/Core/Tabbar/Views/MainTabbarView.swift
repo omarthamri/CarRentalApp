@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct MainTabbarView: View {
+    @StateObject private var viewModel = ExploreViewModel()
     @State private var selectedTab: Int = 0
     var body: some View {
         TabView {
-            ExploreView()
+            ExploreView(viewModel: viewModel)
                 .tabItem {
                     VStack {
                         Image(systemName: "magnifyingglass")
@@ -22,7 +23,7 @@ struct MainTabbarView: View {
                 .onAppear{
                     selectedTab = 0
                 }
-            FavoritesView()
+            FavoritesView(viewModel: viewModel)
                 .tabItem {
                     VStack {
                         Image(systemName: "heart")

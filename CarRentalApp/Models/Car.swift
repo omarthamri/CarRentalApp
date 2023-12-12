@@ -12,10 +12,11 @@ struct Car: Identifiable,Codable,Hashable {
     
     let id: String
     let carName: String
-    var rating: Int
+    var rating: Double
     let brand: String
     var pricePerDay: Int
     var description: String
+    var mainImageName: String
     var imagesNames: [String]
     var insurance: String
     var maxDistance: Float?
@@ -25,4 +26,5 @@ struct Car: Identifiable,Codable,Hashable {
     var hostName: String
     var hostImageName: String
     var hostJoinDate: String
+    var isFavorite: Bool
 }
