@@ -26,8 +26,6 @@ struct TopCarsView: View {
                 } label: {
                     CustomCarView(index: index, viewModel: viewModel)
                 }
-
-                
             }
             
         }
